@@ -54,3 +54,49 @@ def draw_letters
 
   return hand
 end
+
+# To do so, add a method called `uses_available_letters?` in `adagrams.rb`. This method should have the following properties:
+#
+#- Has two parameters:
+#   - `input`, the first parameter, describes some input word, and is a string
+# - `letters_in_hand`, the second parameter, describes an array of drawn letters in a hand. You can expect this to be an array of ten strings, with each string representing a letter
+# - Returns either `true` or `false`
+# - Returns `true` if every letter in the `input` word is available (in the right quantities) in the `letters_in_hand`
+# - Returns `false` if not; if there is a letter in `input` that is not present in the `letters_in_hand` or has too much of compared to the `letters_in_hand`
+#
+
+def uses_available_letters?(input, letters_in_hand)
+
+  input_array = input.upcase.split("").sort
+  sorted_hand = letters_in_hand.sort[0...input_array.length]
+
+  return input_array == sorted_hand
+
+end
+
+
+# Name this method `score_word` in `adagrams.rb`. This method should have the following properties:
+# - Has one parameter: `word`, which is a string of characters
+# - Returns an integer representing the number of points
+# - Each letter within `word` has a point value. The number of points of each letter is summed up to represent the total score of `word`
+# - Each letter's point value is described in the table below
+# - If the length of the word is 7, 8, 9, or 10, then the word gets an additional 8 points
+
+#### Score chart
+
+# |Letter                        | Value|
+# |:----------------------------:|:----:|
+# |A, E, I, O, U, L, N, R, S, T  |   1  |
+# |D, G                          |   2  |
+# |B, C, M, P                    |   3  |
+# |F, H, V, W, Y                 |   4  |
+# |K                             |   5  |
+# |J, X                          |   8  |
+# |Q, Z                          |   10 |
+
+def score_word(word)
+  # - Each letter within `word` has a point value. The number of points of each letter is summed up to represent the total score of `word`
+  # - Each letter's point value is described in the table below
+  # - If the length of the word is 7, 8, 9, or 10, then the word gets an additional 8 points
+  #  return int points
+end
